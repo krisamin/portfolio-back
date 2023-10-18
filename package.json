@@ -1,8 +1,8 @@
 {
   "name": "portfolio-back",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "포트폴리오 백엔드입니다.",
+  "author": "노비스민 (admin@isamin.kr)",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {

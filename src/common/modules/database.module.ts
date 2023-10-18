@@ -8,7 +8,7 @@ export const Mongooseoptions: MongooseModuleAsyncOptions = {
   imports: [CustomConfigModule],
   useFactory: async (configService: ConfigService) => ({
     uri: configService.get<string>("MONGO_URI"),
-    dbName: "dimigoin",
+    dbName: "portfolio",
 
     connectionFactory: (connection) => {
       return connection;

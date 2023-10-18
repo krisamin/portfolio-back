@@ -18,7 +18,7 @@ export class ClusterDto {
 
   @IsString({
     description: "프로젝트 설명",
-    example: "~~~ 프로젝트의 백엔드입니다.",
+    example: "~~~ 백엔드입니다.",
   })
   description: string;
 
@@ -31,13 +31,13 @@ export class ClusterDto {
 
   @IsString({
     description: "클러스터 이름",
-    example: "The-Life-of-Pablo.local",
+    example: "nvss-service.local",
   })
   hostname: string;
 
   @IsString({
     description: "작성자",
-    example: "조현우 (kanyewest@dimigo.hs.kr)",
+    example: "노비스민 (admin@isamin.kr)",
   })
   author: string;
 }
