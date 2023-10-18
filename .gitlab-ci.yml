@@ -14,6 +14,8 @@ check-job:
 
 build-job:
   stage: build
+  before_script:
+    - cp ${ENV_FILE} .env
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker build -t $CI_REGISTRY_IMAGE .
