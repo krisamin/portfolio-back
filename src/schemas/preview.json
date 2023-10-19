@@ -1,0 +1,308 @@
+{
+  "projects": [
+    {
+      "_id": "6530ba77f19cf172791b4c3f",
+      "id": "d7fa6d67-6405-4b1e-9d96-24d08a34f464",
+      "key": "booksodong",
+      "name": "북소동",
+      "team": ["f3ed7851-339e-4c43-afa0-15817d641f2d"],
+      "award": ["7bfef6bd-8427-4df7-9b1e-a95de36ed215"]
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c40",
+      "id": "7a13bffb-4b21-4f43-8512-6eb25f307d1e",
+      "key": "uvirus",
+      "name": "유바이러스",
+      "team": ["c942512e-10b7-4bd7-9635-de3e30133ed1"],
+      "award": []
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c41",
+      "id": "29a291b9-e181-4c61-81c6-5ea5c9e3ce2a",
+      "key": "schoolisamin",
+      "name": "스쿨이즈어민",
+      "team": [],
+      "award": []
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c42",
+      "id": "2032f5d9-b5d3-4903-b75e-6671cf90edfb",
+      "key": "findmask",
+      "name": "마스크찾아줌",
+      "team": ["c942512e-10b7-4bd7-9635-de3e30133ed1"],
+      "award": []
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c43",
+      "id": "4eadd083-d8c2-4a69-8dc3-19376e04daa0",
+      "key": "uvirusai",
+      "name": "유바이러스 AI",
+      "team": ["6cc16c9c-6710-4165-9c97-05b851232eed"],
+      "award": ["76830123-ecec-45ae-8746-69c2edabd3c3"]
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c44",
+      "id": "fba3ed4f-2eba-423b-895d-8d940749ea20",
+      "key": "bucketmemory",
+      "name": "버킷메모리",
+      "team": [],
+      "award": []
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c45",
+      "id": "96743407-8d63-423b-ada2-32913be8b194",
+      "key": "blockmc",
+      "name": "블록크래프트",
+      "team": ["a84df42d-f09d-4b0d-b27c-cfd43dcd4f12"],
+      "award": ["7b9cf886-1751-46a1-9269-3effb3c3783e"]
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c46",
+      "id": "0c9a099f-fa1d-4a43-a33d-17479ebe3918",
+      "key": "shinyspace",
+      "name": "빛나는 우주",
+      "team": [],
+      "award": []
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c47",
+      "id": "82be432c-2563-40dc-90a2-9e0506dea43d",
+      "key": "stunup",
+      "name": "스터넙",
+      "team": ["f9d10fa4-9546-4002-83af-b342f19aa289"],
+      "award": []
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c48",
+      "id": "84cb7104-0027-4fa2-9e86-1e59eee945d0",
+      "key": "surfing",
+      "name": "Surfing",
+      "team": ["ffd2e2a1-b4fe-4a1a-9237-53923fa4040a"],
+      "award": []
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c49",
+      "id": "f2a4013a-adbd-4ea8-937a-a6c38d4d8e48",
+      "key": "wannagohome",
+      "name": "집가고싶다",
+      "team": [],
+      "award": []
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c4a",
+      "id": "d570fecd-6fca-46f3-bb39-41186af53f4a",
+      "key": "dubidubab",
+      "name": "두비두밥",
+      "team": ["51fd5097-75db-40a9-888c-be1902c82220"],
+      "award": ["0917c870-8764-4f56-a70a-53ab09095f0d"]
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c4b",
+      "id": "439304e5-2eec-4a40-93f6-2dc0404441d4",
+      "key": "dimigomeal",
+      "name": "디미고 급식",
+      "team": [],
+      "award": []
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c4c",
+      "id": "e4313f00-8fed-42d8-8cfc-5394cd742f07",
+      "key": "fingle",
+      "name": "Fingle",
+      "team": ["0f0685d0-2b68-4b57-b286-5612a2a71cd8"],
+      "award": []
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c4d",
+      "id": "ac740bcd-d6a9-4277-b3c4-b09d7784205a",
+      "key": "aiba",
+      "name": "AIBA",
+      "team": ["f9d10fa4-9546-4002-83af-b342f19aa289"],
+      "award": []
+    },
+    {
+      "_id": "6530ba77f19cf172791b4c4e",
+      "id": "1f0f3cc9-b9f4-4775-bdaf-6e6e6de48823",
+      "key": "dimigoin",
+      "name": "디미고인",
+      "team": ["ffd2e2a1-b4fe-4a1a-9237-53923fa4040a"],
+      "award": []
+    }
+  ],
+  "teams": [
+    {
+      "_id": "6530ba78f19cf172791b4c51",
+      "id": "c942512e-10b7-4bd7-9635-de3e30133ed1",
+      "key": "semicolon",
+      "name": "세미콜론",
+      "project": [
+        "2032f5d9-b5d3-4903-b75e-6671cf90edfb",
+        "7a13bffb-4b21-4f43-8512-6eb25f307d1e"
+      ],
+      "award": []
+    },
+    {
+      "_id": "6530ba78f19cf172791b4c52",
+      "id": "f3ed7851-339e-4c43-afa0-15817d641f2d",
+      "key": "desodong",
+      "name": "대소동",
+      "project": ["d7fa6d67-6405-4b1e-9d96-24d08a34f464"],
+      "award": ["7bfef6bd-8427-4df7-9b1e-a95de36ed215"]
+    },
+    {
+      "_id": "6530ba78f19cf172791b4c53",
+      "id": "6cc16c9c-6710-4165-9c97-05b851232eed",
+      "key": "decodest",
+      "name": "데코데스트",
+      "project": ["4eadd083-d8c2-4a69-8dc3-19376e04daa0"],
+      "award": ["76830123-ecec-45ae-8746-69c2edabd3c3"]
+    },
+    {
+      "_id": "6530ba78f19cf172791b4c54",
+      "id": "a84df42d-f09d-4b0d-b27c-cfd43dcd4f12",
+      "key": "ahmatda",
+      "name": "아맞다커밋",
+      "project": ["96743407-8d63-423b-ada2-32913be8b194"],
+      "award": ["7b9cf886-1751-46a1-9269-3effb3c3783e"]
+    },
+    {
+      "_id": "6530ba78f19cf172791b4c55",
+      "id": "51fd5097-75db-40a9-888c-be1902c82220",
+      "key": "luna",
+      "name": "루나",
+      "project": ["d570fecd-6fca-46f3-bb39-41186af53f4a"],
+      "award": []
+    },
+    {
+      "_id": "6530ba78f19cf172791b4c56",
+      "id": "0f0685d0-2b68-4b57-b286-5612a2a71cd8",
+      "key": "cresent",
+      "name": "Cresent",
+      "project": ["e4313f00-8fed-42d8-8cfc-5394cd742f07"],
+      "award": []
+    },
+    {
+      "_id": "6530ba78f19cf172791b4c57",
+      "id": "f9d10fa4-9546-4002-83af-b342f19aa289",
+      "key": "ruku",
+      "name": "RUKU",
+      "project": [
+        "ac740bcd-d6a9-4277-b3c4-b09d7784205a",
+        "82be432c-2563-40dc-90a2-9e0506dea43d"
+      ],
+      "award": ["0917c870-8764-4f56-a70a-53ab09095f0d"]
+    },
+    {
+      "_id": "6530ba78f19cf172791b4c58",
+      "id": "ffd2e2a1-b4fe-4a1a-9237-53923fa4040a",
+      "key": "din",
+      "name": "딘",
+      "project": [
+        "1f0f3cc9-b9f4-4775-bdaf-6e6e6de48823",
+        "84cb7104-0027-4fa2-9e86-1e59eee945d0"
+      ],
+      "award": []
+    }
+  ],
+  "awards": [
+    {
+      "_id": "6530ba79f19cf172791b4c5b",
+      "id": "a441f2fc-319f-4bc4-b61c-85f2775fd6df",
+      "key": "nmsac3",
+      "name": "제3회 전국 중학생 알고리즘 경진대회",
+      "period": "은상",
+      "project": [],
+      "team": []
+    },
+    {
+      "_id": "6530ba79f19cf172791b4c5c",
+      "id": "c9cac2dc-9a42-4ad2-9ee2-5df23c918efc",
+      "key": "njhsio17",
+      "name": "제17회 전국 중학생 IT 올림피아드",
+      "period": "금상",
+      "project": [],
+      "team": []
+    },
+    {
+      "_id": "6530ba79f19cf172791b4c5d",
+      "id": "7489e443-1185-42a5-8c30-794f07cef1b1",
+      "key": "deiigecitrpc2021",
+      "name": "2021년 대전교육정보원 영재교육원 개인주제탐구발표대회",
+      "period": "금상",
+      "project": [],
+      "team": []
+    },
+    {
+      "_id": "6530ba79f19cf172791b4c5e",
+      "id": "b8b5b468-89f9-422a-b619-233c85f41ae2",
+      "key": "iso15",
+      "name": "제15회 국제표준올림피아드",
+      "period": "특별상",
+      "project": [],
+      "team": []
+    },
+    {
+      "_id": "6530ba79f19cf172791b4c5f",
+      "id": "a8269647-eaa4-425a-99d1-979f3e47f7aa",
+      "key": "hsoc6",
+      "name": "제6회 한세사이버보안고 중학생 정보보안 콘테스트",
+      "period": "2등",
+      "project": [],
+      "team": []
+    },
+    {
+      "_id": "6530ba79f19cf172791b4c60",
+      "id": "1108d3e4-0289-42fd-b16d-f01a28ea0f69",
+      "key": "jbuctf3",
+      "name": "제3회 중부대학교 해킹방어대회",
+      "period": "우수상",
+      "project": [],
+      "team": []
+    },
+    {
+      "_id": "6530ba79f19cf172791b4c61",
+      "id": "0917c870-8764-4f56-a70a-53ab09095f0d",
+      "key": "appjam22",
+      "name": "제22회 AppJam",
+      "period": "최우수상",
+      "project": ["d570fecd-6fca-46f3-bb39-41186af53f4a"],
+      "team": ["f9d10fa4-9546-4002-83af-b342f19aa289"]
+    },
+    {
+      "_id": "6530ba79f19cf172791b4c62",
+      "id": "15cc9d0d-f26b-45c8-a52f-716e3ca882dd",
+      "key": "metacity",
+      "name": "메타버스를 활용한 스마트시티 아이디어 공모전 공모",
+      "period": "장려상",
+      "project": [],
+      "team": []
+    },
+    {
+      "_id": "6530ba79f19cf172791b4c63",
+      "id": "7b9cf886-1751-46a1-9269-3effb3c3783e",
+      "key": "kcf3",
+      "name": "제3회 한국코드페어 해커톤",
+      "period": "대상",
+      "project": ["96743407-8d63-423b-ada2-32913be8b194"],
+      "team": ["a84df42d-f09d-4b0d-b27c-cfd43dcd4f12"]
+    },
+    {
+      "_id": "6530ba79f19cf172791b4c64",
+      "id": "76830123-ecec-45ae-8746-69c2edabd3c3",
+      "key": "kcf2",
+      "name": "제2회 한국코드페어 SW빌더스챌린지",
+      "period": "금상",
+      "project": ["4eadd083-d8c2-4a69-8dc3-19376e04daa0"],
+      "team": ["6cc16c9c-6710-4165-9c97-05b851232eed"]
+    },
+    {
+      "_id": "6530ba79f19cf172791b4c65",
+      "id": "7bfef6bd-8427-4df7-9b1e-a95de36ed215",
+      "key": "kcf1",
+      "name": "제1회 한국코드페어 SW빌더스챌린지",
+      "period": "은상",
+      "project": ["d7fa6d67-6405-4b1e-9d96-24d08a34f464"],
+      "team": ["f3ed7851-339e-4c43-afa0-15817d641f2d"]
+    }
+  ]
+}

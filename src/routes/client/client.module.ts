@@ -1,4 +1,3 @@
-import { HttpModule } from "@nestjs/axios";
 import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
 
@@ -11,8 +10,8 @@ import {
   AwardSchema,
 } from "src/schemas";
 
-import { ManageController } from "./manage.controller";
-import { ManageService } from "./manage.service";
+import { ClientController } from "./client.controller";
+import { ClientService } from "./client.service";
 
 @Module({
   imports: [
@@ -30,9 +29,8 @@ import { ManageService } from "./manage.service";
         schema: AwardSchema,
       },
     ]),
-    HttpModule,
   ],
-  controllers: [ManageController],
-  providers: [ManageService],
+  controllers: [ClientController],
+  providers: [ClientService],
 })
-export class ManageModule {}
+export class ClientModule {}
