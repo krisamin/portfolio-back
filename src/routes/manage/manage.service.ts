@@ -30,7 +30,7 @@ export class ManageService {
     private readonly httpService: HttpService,
   ) {}
 
-  async getNotionDatabase(databaseId: string): Promise<any> {
+  async getNotionData(databaseId: string): Promise<any> {
     const { data } = await this.httpService.axiosRef.post(
       `https://api.notion.com/v1/databases/${databaseId}/query`,
       {},
@@ -56,16 +56,16 @@ export class ManageService {
       id: string;
       key: string;
       name: string;
-      team: [string];
-      award: [string];
+      teams: [string];
+      awards: [string];
     }
 
     interface Team {
       id: string;
       key: string;
       name: string;
-      project: [string];
-      award: [string];
+      projects: [string];
+      awards: [string];
     }
 
     interface Award {
@@ -73,80 +73,80 @@ export class ManageService {
       key: string;
       name: string;
       period: string;
-      project: [string];
-      team: [string];
+      projects: [string];
+      teams: [string];
     }
 
-    const projectData: Project[] = [];
-    const teamData: Team[] = [];
-    const awardData: Award[] = [];
+    const projects: Project[] = [];
+    const teams: Team[] = [];
+    const awards: Award[] = [];
 
-    const projectDatabase = await this.getNotionDatabase(
+    const projectsData = await this.getNotionData(
       "64ac81fd35804bf69efac24a04c399d7",
     );
 
-    const teamDatabase = await this.getNotionDatabase(
+    const teamsData = await this.getNotionData(
       "9d6ed9f46e5b46f7b546e06f72a81a02",
     );
 
-    const awardDatabase = await this.getNotionDatabase(
+    const awardsData = await this.getNotionData(
       "9edcbb9e27db46a2be3bc392c8fbe571",
     );
 
-    for (const item of projectDatabase) {
+    for (const item of projectsData) {
       if (item.archived) continue;
-      projectData.push({
+      projects.push({
         id: item.id,
         key: item.properties.key.rich_text[0].plain_text,
         name: item.properties.name.title[0].plain_text,
-        team: item.properties.team.relation.map(
+        teams: item.properties.teams.relation.map(
           (relation: { id: string }) => relation.id,
         ),
-        award: item.properties.award.relation.map(
+        awards: item.properties.awards.relation.map(
           (relation: { id: string }) => relation.id,
         ),
       });
     }
 
-    for (const item of teamDatabase) {
+    for (const item of teamsData) {
       if (item.archived) continue;
-      teamData.push({
+      teams.push({
         id: item.id,
         key: item.properties.key.rich_text[0].plain_text,
         name: item.properties.name.title[0].plain_text,
-        project: item.properties.project.relation.map(
+        projects: item.properties.projects.relation.map(
           (relation: { id: string }) => relation.id,
         ),
-        award: item.properties.award.relation.map(
+        awards: item.properties.awards.relation.map(
           (relation: { id: string }) => relation.id,
         ),
       });
     }
 
-    for (const item of awardDatabase) {
+    for (const item of awardsData) {
       if (item.archived) continue;
-      awardData.push({
+      awards.push({
         id: item.id,
         key: item.properties.key.rich_text[0].plain_text,
         name: item.properties.name.title[0].plain_text,
         period: item.properties.period.rich_text[0].plain_text,
-        project: item.properties.project.relation.map(
+        projects: item.properties.projects.relation.map(
           (relation: { id: string }) => relation.id,
         ),
-        team: item.properties.team.relation.map(
+        teams: item.properties.teams.relation.map(
           (relation: { id: string }) => relation.id,
         ),
       });
     }
 
     await this.projectModel.deleteMany({});
-    await this.projectModel.insertMany(projectData);
+    await this.projectModel.insertMany(projects);
 
     await this.teamModel.deleteMany({});
-    await this.teamModel.insertMany(teamData);
+    await this.teamModel.insertMany(teams);
 
     await this.awardModel.deleteMany({});
-    await this.awardModel.insertMany(awardData);
+    await this.awardModel.insertMany(awards);
 
     return {
       projects: await this.projectModel.find(),

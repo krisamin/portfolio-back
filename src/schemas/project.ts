@@ -17,10 +17,10 @@ export class Project {
   name: string;
 
   @Prop({ required: true })
-  team: string[];
+  teams: string[];
 
   @Prop({ required: true })
-  award: string[];
+  awards: string[];
 }
 
 export const ProjectSchema = SchemaFactory.createForClass(Project);

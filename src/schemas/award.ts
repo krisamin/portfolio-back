@@ -22,10 +22,10 @@ export class Award {
   period: string;
 
   @Prop({ required: true })
-  project: Project[];
+  projects: Project[];
 
   @Prop({ required: true })
-  team: [Team];
+  teams: [Team];
 }
 
 export const AwardSchema = SchemaFactory.createForClass(Award);
