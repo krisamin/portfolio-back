@@ -31,20 +31,31 @@ export class ManageService {
   ) {}
 
   async getNotionData(databaseId: string): Promise<any> {
-    const { data } = await this.httpService.axiosRef.post(
-      `https://api.notion.com/v1/databases/${databaseId}/query`,
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${this.configService.get<string>(
-            "NOTION_SECRET",
-          )}`,
-          "Notion-Version": "2022-06-28",
+    try {
+      const { data } = await this.httpService.axiosRef.post(
+        `https://api.notion.com/v1/databases/${databaseId}/query`,
+        {
+          sorts: [
+            {
+              property: "order",
+              direction: "descending",
+            },
+          ],
         },
-      },
-    );
+        {
+          headers: {
+            Authorization: `Bearer ${this.configService.get<string>(
+              "NOTION_SECRET",
+            )}`,
+            "Notion-Version": "2022-06-28",
+          },
+        },
+      );
 
-    return data.results;
+      return data.results;
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   async updateNotion(): Promise<{
