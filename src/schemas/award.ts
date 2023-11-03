@@ -25,6 +25,9 @@ export class Award {
   by: string;
 
   @Prop({ required: true })
+  date: string;
+
+  @Prop({ required: true })
   projects: Project[];
 
   @Prop({ required: true })
