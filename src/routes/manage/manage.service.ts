@@ -85,6 +85,7 @@ export class ManageService {
       key: string;
       name: string;
       period: string;
+      by: string;
       projects: [string];
       teams: [string];
     }
@@ -143,6 +144,7 @@ export class ManageService {
         key: item.properties.key.rich_text[0].plain_text,
         name: item.properties.name.title[0].plain_text,
         period: item.properties.period.rich_text[0].plain_text,
+        by: item.properties.by.rich_text[0].plain_text,
         projects: item.properties.projects.relation.map(
           (relation: { id: string }) => relation.id,
         ),

@@ -22,6 +22,9 @@ export class Award {
   period: string;
 
   @Prop({ required: true })
+  by: string;
+
+  @Prop({ required: true })
   projects: Project[];
 
   @Prop({ required: true })

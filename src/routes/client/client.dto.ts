@@ -60,6 +60,11 @@ export class AwardResponseBaseDto {
     description: "상 등급",
   })
   period: string;
+
+  @IsString({
+    description: "상 수여자",
+  })
+  by: string;
 }
 
 export class ProjectResponseDto extends ProjectResponseBaseDto {

@@ -75,8 +75,6 @@ export class ClientService {
       const newProject: ProjectResponseBaseDto[] = [];
       const newAward: AwardResponseBaseDto[] = [];
 
-      console.log(team);
-
       for (const project of team.projects) {
         const target = { ...projects.find((item) => item.id === project) };
         delete target.teams;
