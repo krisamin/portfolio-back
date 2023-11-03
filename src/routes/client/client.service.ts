@@ -44,7 +44,7 @@ export class ClientService {
     const newAwards: AwardResponseDto[] = [];
 
     for (const project of projects) {
-      const newTeam: ProjectResponseBaseDto[] = [];
+      const newTeam: TeamResponseBaseDto[] = [];
       const newAward: AwardResponseBaseDto[] = [];
 
       for (const team of project.teams) {

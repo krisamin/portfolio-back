@@ -16,6 +16,11 @@ export class ProjectResponseBaseDto {
     description: "프로젝트 이름",
   })
   name: string;
+
+  @IsString({
+    description: "프로젝트 설명",
+  })
+  description: string;
 }
 
 export class TeamResponseBaseDto {
