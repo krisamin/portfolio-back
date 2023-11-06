@@ -55,6 +55,7 @@ export class ClientService {
 
       for (const team of project.teams) {
         const target = { ...teams.find((item) => item.id === team) };
+        if (!Object.keys(target).length) continue;
         delete target.projects;
         delete target.awards;
         newTeam.push(target);
@@ -62,6 +63,7 @@ export class ClientService {
 
       for (const award of project.awards) {
         const target = { ...awards.find((item) => item.id === award) };
+        if (!Object.keys(target).length) continue;
         delete target.projects;
         delete target.teams;
         newAward.push(target);
@@ -83,6 +85,7 @@ export class ClientService {
 
       for (const project of team.projects) {
         const target = { ...projects.find((item) => item.id === project) };
+        if (!Object.keys(target).length) continue;
         delete target.teams;
         delete target.awards;
         newProject.push(target);
@@ -90,6 +93,7 @@ export class ClientService {
 
       for (const award of team.awards) {
         const target = { ...awards.find((item) => item.id === award) };
+        if (!Object.keys(target).length) continue;
         delete target.projects;
         delete target.teams;
         newAward.push(target);
@@ -111,6 +115,7 @@ export class ClientService {
 
       for (const project of award.projects) {
         const target = { ...projects.find((item) => item.id === project) };
+        if (!Object.keys(target).length) continue;
         delete target.teams;
         delete target.awards;
         newProject.push(target);
@@ -118,6 +123,7 @@ export class ClientService {
 
       for (const team of award.teams) {
         const target = { ...teams.find((item) => item.id === team) };
+        if (!Object.keys(target).length) continue;
         delete target.projects;
         delete target.awards;
         newTeam.push(target);
