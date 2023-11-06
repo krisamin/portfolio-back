@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { HttpException, Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 
@@ -9,6 +9,8 @@ import {
   TeamDocument,
   Award,
   AwardDocument,
+  Content,
+  ContentDocument,
 } from "src/schemas";
 
 import {
@@ -19,6 +21,7 @@ import {
   TeamResponseDto,
   AwardResponseBaseDto,
   AwardResponseDto,
+  ProjectDetailResponseDto,
 } from "./client.dto";
 
 @Injectable()
@@ -32,6 +35,9 @@ export class ClientService {
 
     @InjectModel(Award.name)
     private awardModel: Model<AwardDocument>,
+
+    @InjectModel(Content.name)
+    private contentModel: Model<ContentDocument>,
   ) {}
 
   async get(): Promise<ClientResponseDto> {
@@ -131,6 +137,19 @@ export class ClientService {
       projects: newProjects,
       teams: newTeams,
       awards: newAwards,
+    };
+  }
+
+  async getProject(key: string): Promise<ProjectDetailResponseDto> {
+    const data = await this.get();
+    const project = data.projects.find((item) => item.key === key);
+    if (!project) throw new HttpException("프로젝트를 찾을 수 없습니다.", 404);
+
+    const content = await this.contentModel.findOne({ id: project.id }).lean();
+
+    return {
+      info: project,
+      content: content?.content || "",
     };
   }
 }

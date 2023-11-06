@@ -8,6 +8,8 @@ import {
   TeamSchema,
   Award,
   AwardSchema,
+  Content,
+  ContentSchema,
 } from "src/schemas";
 
 import { ClientController } from "./client.controller";
@@ -27,6 +29,10 @@ import { ClientService } from "./client.service";
       {
         name: Award.name,
         schema: AwardSchema,
+      },
+      {
+        name: Content.name,
+        schema: ContentSchema,
       },
     ]),
   ],

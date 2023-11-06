@@ -133,3 +133,17 @@ export class ClientResponseDto {
   })
   awards: AwardResponseDto[];
 }
+
+export class ProjectDetailResponseDto {
+  @ApiProperty({
+    type: ProjectResponseDto,
+    description: "프로젝트 정보",
+  })
+  info: ProjectResponseDto;
+
+  @ApiProperty({
+    type: String,
+    description: "프로젝트 설명",
+  })
+  content: string;
+}

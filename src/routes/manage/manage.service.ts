@@ -2,7 +2,9 @@ import { HttpService } from "@nestjs/axios";
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { InjectModel } from "@nestjs/mongoose";
+import { Client } from "@notionhq/client";
 import { Model } from "mongoose";
+import { NotionToMarkdown } from "notion-to-md";
 
 import {
   Project,
@@ -11,6 +13,8 @@ import {
   TeamDocument,
   Award,
   AwardDocument,
+  Content,
+  ContentDocument,
 } from "src/schemas";
 
 @Injectable()
@@ -25,10 +29,24 @@ export class ManageService {
     @InjectModel(Award.name)
     private awardModel: Model<AwardDocument>,
 
+    @InjectModel(Content.name)
+    private contentModel: Model<ContentDocument>,
+
     private readonly configService: ConfigService,
 
     private readonly httpService: HttpService,
   ) {}
+
+  notion = new Client({
+    auth: this.configService.get<string>("NOTION_SECRET"),
+  });
+
+  n2m = new NotionToMarkdown({
+    notionClient: this.notion,
+    config: {
+      parseChildPages: false,
+    },
+  });
 
   async getNotionData(databaseId: string): Promise<any> {
     try {
@@ -91,9 +109,15 @@ export class ManageService {
       teams: [string];
     }
 
+    interface Content {
+      id: string;
+      content: string;
+    }
+
     const projects: Project[] = [];
     const teams: Team[] = [];
     const awards: Award[] = [];
+    const contents: Content[] = [];
 
     const projectsData = await this.getNotionData(
       "64ac81fd35804bf69efac24a04c399d7",
@@ -120,6 +144,14 @@ export class ManageService {
         awards: item.properties.awards.relation.map(
           (relation: { id: string }) => relation.id,
         ),
+      });
+
+      const mdblocks = await this.n2m.pageToMarkdown(item.id);
+      const mdString = this.n2m.toMarkdownString(mdblocks);
+      if (!mdString.parent) continue;
+      contents.push({
+        id: item.id,
+        content: mdString.parent,
       });
     }
 
@@ -165,6 +197,9 @@ export class ManageService {
 
     await this.awardModel.deleteMany({});
     await this.awardModel.insertMany(awards);
+
+    await this.contentModel.deleteMany({});
+    await this.contentModel.insertMany(contents);
 
     return {
       projects: await this.projectModel.find(),
