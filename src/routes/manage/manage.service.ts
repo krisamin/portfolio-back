@@ -172,14 +172,13 @@ export class ManageService {
 
     for (const item of awardsData) {
       if (item.archived) continue;
-      if (!item.properties.date.date?.start) continue;
       awards.push({
         id: item.id,
         key: item.properties.key.rich_text[0].plain_text,
         name: item.properties.name.title[0].plain_text,
         period: item.properties.period.rich_text[0].plain_text,
         by: item.properties.by.rich_text[0].plain_text,
-        date: item.properties.date.date.start,
+        date: item.properties.date.date?.start || "0000-00-00",
         projects: item.properties.projects.relation.map(
           (relation: { id: string }) => relation.id,
         ),
