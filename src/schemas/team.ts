@@ -17,6 +17,9 @@ export class Team {
   name: string;
 
   @Prop({ required: true })
+  name_en: string;
+
+  @Prop({ required: true })
   projects: string[];
 
   @Prop({ required: true })

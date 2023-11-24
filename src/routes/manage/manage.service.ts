@@ -85,7 +85,9 @@ export class ManageService {
       id: string;
       key: string;
       name: string;
+      name_en: string;
       description: string;
+      description_en: string;
       teams: [string];
       awards: [string];
     }
@@ -94,6 +96,7 @@ export class ManageService {
       id: string;
       key: string;
       name: string;
+      name_en: string;
       projects: [string];
       awards: [string];
     }
@@ -137,7 +140,9 @@ export class ManageService {
         id: item.id,
         key: item.properties.key.rich_text[0].plain_text,
         name: item.properties.name.title[0].plain_text,
+        name_en: item.properties.name_en.rich_text[0].plain_text,
         description: item.properties.description.rich_text[0].plain_text,
+        description_en: item.properties.description_en.rich_text[0].plain_text,
         teams: item.properties.teams.relation.map(
           (relation: { id: string }) => relation.id,
         ),
@@ -161,6 +166,7 @@ export class ManageService {
         id: item.id,
         key: item.properties.key.rich_text[0].plain_text,
         name: item.properties.name.title[0].plain_text,
+        name_en: item.properties.name_en.rich_text[0].plain_text,
         projects: item.properties.projects.relation.map(
           (relation: { id: string }) => relation.id,
         ),
