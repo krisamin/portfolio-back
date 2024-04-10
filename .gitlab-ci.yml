@@ -1,7 +1,3 @@
-default:
-  tags:
-    - service
-
 stages:
   - check
   - build
@@ -24,18 +20,11 @@ build-job:
 deploy-job:
   stage: deploy
   script:
-    - docker rm -f $CI_PROJECT_PATH_SLUG
+    - docker rm -f $CI_PROJECT_PATH_SLUG || true
     - >
       docker create
       --name $CI_PROJECT_PATH_SLUG
       --restart always
-      --label traefik.enable=true
-      --label traefik.http.routers.$CI_PROJECT_PATH_SLUG.entrypoints=https
-      --label traefik.http.routers.$CI_PROJECT_PATH_SLUG.rule='Host(`api.isamin.kr`)'
-      --label traefik.http.routers.$CI_PROJECT_PATH_SLUG.tls=true
-      --label traefik.http.routers.$CI_PROJECT_PATH_SLUG.tls.certresolver=cloudflare
-      --label traefik.http.routers.$CI_PROJECT_PATH_SLUG.service=$CI_PROJECT_PATH_SLUG
-      --label traefik.http.services.$CI_PROJECT_PATH_SLUG.loadbalancer.server.port=3000
       --network proxy
       $CI_REGISTRY_IMAGE:latest
     - docker network connect portfolio-production $CI_PROJECT_PATH_SLUG
