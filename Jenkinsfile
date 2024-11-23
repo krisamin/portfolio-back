@@ -52,7 +52,7 @@ pipeline {
                         --name ${env.CONTAINER_NAME} \
                         --restart always \
                         --network proxy \
-                        --volume /mnt/docker/services/portfolio/back/.env:/app/.env \
+                        --volume /mnt/data/services/portfolio/back/.env:/app/.env \
                         ${env.IMAGE_URL}"
                     sh "docker network connect portfolio ${env.CONTAINER_NAME}"
                     sh "docker start ${env.CONTAINER_NAME}"
